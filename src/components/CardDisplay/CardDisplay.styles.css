@@ -65,11 +65,17 @@
     flex: 1 0 50%;
     margin-bottom: 5px;
     font-size: 0.85rem;
+    color: #000; /* Add this line to make text black */
 }
 
 .stat-label {
     font-weight: bold;
     margin-right: 5px;
+    color: #000; /* Ensure label text is also black */
+}
+
+.stat-value {
+    color: #000; /* Ensure value text is also black */
 }
 
 .card-desc {
