@@ -1,0 +1,116 @@
+/* src/components/CardDisplay/CardDisplay.styles.css */
+.card-container {
+    width: 280px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.card-image-container {
+    width: 100%;
+    text-align: center;
+    background: #000;
+    padding-top: 10px;
+}
+
+.card-image {
+    width: 80%;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.card-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+.card-type {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+.card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.stat {
+    flex: 1 0 50%;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.stat-label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.card-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    overflow: auto;
+    max-height: 150px;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 8px;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+/* Card type styling */
+.normal-monster {
+    border: 2px solid #ffe498;
+}
+.effect-monster {
+    border: 2px solid #ff9c43;
+}
+.fusion-monster {
+    border: 2px solid #a044ff;
+}
+.synchro-monster {
+    border: 2px solid #dbdbdb;
+}
+.xyz-monster {
+    border: 2px solid #000;
+}
+.link-monster {
+    border: 2px solid #00a1ff;
+}
+.ritual-monster {
+    border: 2px solid #5b64da;
+}
+.pendulum-monster {
+    border: 2px solid #7cff56;
+}
+.spell-card {
+    border: 2px solid #1d9e74;
+}
+.trap-card {
+    border: 2px solid #bc5e84;
+}
