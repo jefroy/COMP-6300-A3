@@ -87,6 +87,12 @@
     padding: 8px;
     border-radius: 4px;
     flex-grow: 1;
+    color: #000;
+}
+
+.card-desc p {
+    color: #000;
+    margin: 0;
 }
 
 /* Card type styling */
