@@ -2,7 +2,7 @@
   "name": "yugioh-card-explorer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jefroy.github.io/yugioh-card-explorer",
+  "homepage": "https://jefroy.github.io/COMP-6300-A3",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
