@@ -1,0 +1,46 @@
+name: Deploy PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build-and-deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build
+        run: npm run build
+        env:
+          PUBLIC_URL: /COMP-6300-A3/pr-preview/pr-${{ github.event.number }}
+        
+      - name: Deploy PR Preview
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
+          target-folder: pr-preview/pr-${{ github.event.number }}
+          clean-exclude: pr-preview/
+          
+      - name: Comment PR with Preview URL
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ Preview deployment is ready! \n\nURL: https://${context.repo.owner}.github.io/COMP-6300-A3/pr-preview/pr-${context.issue.number}`
+            })
